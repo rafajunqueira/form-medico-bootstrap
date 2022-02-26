@@ -1,0 +1,21 @@
+.forceAlignCenter {
+  text-align: center;
+}
+
+.forceAlignRight {
+  text-align: right;
+}
+
+#topo {
+  align-items: center;
+  width: auto;
+}
+
+#footer {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}

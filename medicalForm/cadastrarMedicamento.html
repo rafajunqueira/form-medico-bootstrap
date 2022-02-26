@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styleCadastrarMedicamento.css" />
+    <title>Medicamentos S.A.</title>
+  </head>
+  <div class="container-flex forceAlignCenter" id="topo">
+    <h1 class="forceAlignCenter">Cadastro de Medicamentos</h1>
+  </div>
+  <body>
+    <div class="container col-md-10" id="containerControlButtons">
+      <div class="form-row">
+        <!-- BOTÕES DE CONTROLE -->
+        <div class="form-group col-md-12" id="controlButtons">
+          <button type="button" class="btn btn-primary">Novo</button>
+          <button type="button" class="btn btn-primary">Gravar</button>
+          <button type="button" class="btn btn-primary">Cancelar</button>
+          <button type="button" class="btn btn-primary">Apagar</button>
+          <button class="btn btn-primary">Voltar</button>
+          <button class="btn btn-primary">Ajuda</button>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO -->
+      <form>
+        <!-- PRIMEIRA LINHA -->
+        <div class="form-group row">
+          <label
+            for="inputCodigoMedicamento"
+            class="col-sm-2 col-form-label forceAlignRight"
+          >
+            Código</label
+          >
+          <div class="col-sm-2">
+            <input
+              type="text"
+              class="form-control centerText"
+              name="inputCodigoMedicamento"
+              id="inputCodigoMedicamento"
+              placeholder="321"
+              readonly
+            />
+          </div>
+        </div>
+
+        <!-- SEGUNDA LINHA -->
+        <div class="form-group row">
+          <label
+            for="inputRegistroMS"
+            class="col-sm-2 col-form-label forceAlignRight"
+          >
+            Registro M.S.</label
+          >
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="inputRegistroMS"
+              placeholder=""
+            />
+          </div>
+          <label
+            class="col-sm-2 col-form-label forceAlignRight"
+            for="inputCodigoDeBarras"
+            >Código de Barras</label
+          >
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="inputCodigoDeBarras"
+              placeholder="Ex: 1234567890123 (13 dígitos)"
+            />
+          </div>
+        </div>
+
+        <!-- TERCEIRA LINHA -->
+        <div class="form-group row">
+          <label
+            class="col-sm-2 col-form-label forceAlignRight"
+            for="inputDescricao"
+          >
+            Descrição</label
+          >
+          <div class="col-md-4">
+            <textarea
+              class="form-control"
+              id="inputDescricao"
+              rows="1"
+            ></textarea>
+          </div>
+
+          <label
+            for="inputLista"
+            class="col-sm-2 col-form-label forceAlignRight"
+            >Lista</label
+          >
+
+          <div class="col-md-4">
+            <div class="dropdown">
+              <a
+                class="btn btn-secondary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownLista"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                CORRIGIR DROPDOWN 1
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Opção 1</a>
+                <a class="dropdown-item" href="#">Opção 2</a>
+                <a class="dropdown-item" href="#">Opção 3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUARTA LINHA -->
+        <div class="form-group row">
+          <label
+            for="inputApresentacao"
+            class="col-sm-2 col-form-label forceAlignRight"
+            >Apresentação</label
+          >
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="inputApresentacao"
+              placeholder=""
+            />
+          </div>
+
+          <label
+            for="dropdownLaboratorio"
+            class="col-sm-2 col-form-label forceAlignRight"
+            >Laboratório</label
+          >
+          <div class="col-md-4">
+            <div class="dropdown">
+              <a
+                class="btn btn-secondary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownLaboratorio"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                CORRIGIR DROPDOWN 2
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Opção 1</a>
+                <a class="dropdown-item" href="#">Opção 2</a>
+                <a class="dropdown-item" href="#">Opção 3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUINTA LINHA -->
+        <div class="form-group row">
+          <label
+            for="dropdownClasseTerapeutica"
+            class="col-sm-2 col-form-label forceAlignRight"
+            >Classe Terapêutica</label
+          >
+          <div class="col-md-4">
+            <div class="dropdown">
+              <a
+                class="btn btn-secondary dropdown-toggle forceAlignRight"
+                href="#"
+                role="button"
+                id="dropdownClasseTerapeutica"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                CORRIGIR DROPDOWN 3
+              </a>
+
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownClasseTerapeutica"
+              >
+                <a class="dropdown-item" href="#">Opção 1</a>
+                <a class="dropdown-item" href="#">Opção 2</a>
+                <a class="dropdown-item" href="#">Opção 3</a>
+              </div>
+            </div>
+          </div>
+          <label
+            class="col-sm-2 col-form-label forceAlignRight"
+            for="inputNumeroDCB"
+            >Número DCB</label
+          >
+          <div class="col-md-1">
+            <input
+              type="text"
+              class="form-control"
+              id="inputNumeroDCB"
+              placeholder=""
+            />
+          </div>
+        </div>
+
+        <!-- SEXTA LINHA -->
+        <div class="form-group row">
+          <label
+            for="dropdownUnidadeMedida"
+            class="col-sm-2 col-form-label forceAlignRight"
+            >Unidade de Medida</label
+          >
+          <div class="col-md-4">
+            <div class="dropdown">
+              <a
+                class="btn btn-secondary dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownUnidadeMedida"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                CORRIGIR DROPDOWN 4
+              </a>
+
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownUnidadeMedida"
+              >
+                <a class="dropdown-item" href="#">Opção 1</a>
+                <a class="dropdown-item" href="#">Opção 2</a>
+                <a class="dropdown-item" href="#">Opção 3</a>
+              </div>
+            </div>
+          </div>
+          <label
+            class="col-sm-2 col-form-label forceAlignRight"
+            for="inputDescricaoDCB"
+            >Descrição DCB</label
+          >
+          <div class="col-md-4">
+            <textarea
+              class="form-control"
+              id="inputDescricaoDCB"
+              rows="1"
+            ></textarea>
+          </div>
+        </div>
+        <!-- CHECKBOX -->
+        <div class="form-group row">
+          <div class="col-sm-6 offset-md-8">
+            <label class="radio-inline">
+              <input
+                type="checkbox"
+                name="inlineRadioOptionsWeek"
+                id="Checkbox3"
+                value="3"
+              />
+              Permitir controle manual (apenas controle local)
+            </label>
+          </div>
+        </div>
+
+        <!-- FIM FORMULÁRIO -->
+      </form>
+
+      <!-- GRID -->
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Registro M.S.</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Apresentação</th>
+            <th scope="col">Classe Terapêutica</th>
+            <th scope="col">Código de Barras</th>
+            <th scope="col">Lista</th>
+            <th scope="col">Laboratório</th>
+            <th scope="col">Nº DCB</th>
+            <th scope="col">Descrição DCB</th>
+            <th scope="col">Controle Manual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>A</td>
+            <td>AA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>B</td>
+            <td>BB</td>
+            <td>BBB</td>
+            <td>BBB</td>
+            <td>BBB</td>
+            <td>BBB</td>
+            <td>BBB</td>
+            <td>BBB</td>
+            <td>BBB</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- FIM CONTAINER PRINCIPAL -->
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <footer>
+    <div class="container col-md-12 forceAlignCenter" id="footer">Footer</div>
+  </footer>
+</html>
