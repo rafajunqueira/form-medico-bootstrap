@@ -19,3 +19,8 @@
   border-left: none;
   border-right: none;
 }
+
+.dropdown-toggle,
+.dropdown-menu {
+  width: 100%;
+}
