@@ -22,7 +22,11 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Css personalizado -->
     <link rel="stylesheet" href="./custom-css/styleCadastrarMedicamento.css" />
+
+    <!-- Máscaras -->
+    <script src="./js/jquery.mask.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -30,75 +34,88 @@
     />
 
     <title>Medicamentos S.A.</title>
+
+    <!-- SETANDO AS MÁSCARAS DO FORMULÁRIO -->
+    <script>
+      jQuery(document).ready(function ($) {
+        // Código de Barras (13 dígitos, EAN-13)
+        $("#inputCodigoDeBarras").mask("0000000000000");
+        // Registro MS (9 dígitos)
+        $("#inputRegistroMS").mask("0000000000000");
+        // Registro MS (9 dígitos)
+        $("#inputRegistroMS").mask("0000000000000");
+      });
+    </script>
+
+    <!-- ADD NEW LINE TO GRID -->
+    <script>
+      jQuery(document).ready(function ($) {
+        $("#btnSubmitForm").click(function () {
+          $("tbody").append(
+            " <tr>" +
+              "            <th scope='row'>1</th> " +
+              "            <td>" +
+              $("#inputDescricao").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputApresentacao").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputClasseTerapeutica").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputCodigoDeBarras").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputLista").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputLaboratorio").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputNumeroDCB").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputDescricaoDCB").val() +
+              "</td> " +
+              "            <td>" +
+              $("#inputControleManual").val() +
+              "</td> " +
+              "<td>" +
+              ("<button type='button' class='btn btn-info' id='btnDelete'>X</button>" +
+                "</td>" +
+                "</tr> ")
+          );
+        });
+      });
+    </script>
   </head>
   <div class="container-flex forceAlignCenter" id="topo">
     <h1 class="forceAlignCenter">Cadastro de Medicamentos</h1>
   </div>
   <body>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $("#btnAddNewRegister").click(function () {
-          $("tbody").append(
-            " <tr>" +
-              "            <th scope='row'>1</th> " +
-              "            <td>A</td> " +
-              "            <td>AA</td> " +
-              "            <td>AAA</td> " +
-              "            <td>AAA</td> " +
-              "            <td>AAA</td> " +
-              "            <td>AAA</td> " +
-              "            <td>AAA</td> " +
-              "            <td>AAA</td> " +
-              "            <td>AAA</td> " +
-              "</tr> "
-          );
-
-          $("#div_nome").append(
-            "<label>::CADASTRO DE CLIENTE::</label></br></br>"
-          );
-          $("#div_nome").append("<label>Nome</label>");
-          var inputNome = $("<input />", {
-            id: "inputNome",
-            class: "form-control",
-          });
-          $("#div_nome").append(inputNome);
-
-          $("#div_nome").append("<label>CPF</label>");
-          var inputCPF = $("<input />", {
-            id: "inputCPF",
-            class: "form-control",
-          });
-          $("#div_nome").append(inputCPF);
-
-          $("#div_nome").append(
-            "</br></br><button type='submit' class='btn btn-default'>Cadastrar</button>"
-          );
-        });
-      });
-    </script>
     <div class="container col-md-10" id="containerControlButtons">
       <div class="form-row">
         <!-- BOTÕES DE CONTROLE -->
         <div class="form-group" id="controlButtons">
           <button href="index-cadastrar.html" class="btn btn-link">
             <a href="index-cadastrar.html" class="text-decoration-none">
-              <i class="bi bi-arrow-left-short"></i>
-              Voltar</a
+              <i class="bi bi-arrow-left-short"> </i>Voltar</a
             >
           </button>
-          <button type="button" id="btnAddNewRegister" class="btn btn-primary">
+          <button type="button" id="btnNewRegister" class="btn btn-info">
             <i class="bi bi-plus"></i>
             Novo
           </button>
-          <button type="button" class="btn btn-primary">
+          <button type="button" id="btnSubmitForm" class="btn btn-primary">
             <i class="bi bi-cloud-arrow-up-fill"></i>
             Gravar
           </button>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-info">
             <i class="bi bi-x"></i>
             Cancelar
           </button>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-info" id="btnDelete">
             <i class="bi bi-eraser-fill"></i>
             Apagar
           </button>
@@ -110,7 +127,12 @@
       </div>
 
       <!-- FORMULÁRIO -->
-      <form>
+      <form
+        name="formCadastrarMedicamento"
+        method="post"
+        type="submit"
+        action=""
+      >
         <!-- PRIMEIRA LINHA -->
         <div class="form-group row">
           <label
@@ -148,16 +170,16 @@
             />
           </div>
           <label
-            class="col-sm-2 col-form-label forceAlignRight"
+            class="col-sm-2 col-form-label forceAlignRight codigoDeBarras"
             for="inputCodigoDeBarras"
             >Código de Barras</label
           >
           <div class="col-md-4">
             <input
               type="text"
-              class="form-control"
+              class="form-control codigoDeBarras"
               id="inputCodigoDeBarras"
-              placeholder="Ex: 1234567890123 (13 dígitos)"
+              placeholder=""
             />
           </div>
         </div>
@@ -374,6 +396,7 @@
             <th id="tbNrDCB" scope="col">Nº DCB</th>
             <th id="tbDescricaoDCB" scope="col">Descrição DCB</th>
             <th id="tbControleManual" scope="col">Controle Manual</th>
+            <th id="tbRemove" scope="col">Apagar</th>
           </tr>
         </thead>
         <tbody></tbody>
